@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                        :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 22:51:07 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/09 23:06:11 by wcollen          ###   ########.fr       */
+/*   Created: 2021/10/09 23:10:13 by wcollen           #+#    #+#             */
+/*   Updated: 2021/10/17 12:27:45 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int symb)
+#include "libft.h"
+
+void	*ft_memmove(void *destination, const void *source, size_t len)
 {
-	if ((symb >= 'A' && symb <= 'Z') || (symb >= 'a' && symb <= 'z'))
+	unsigned char		*to;
+	const unsigned char	*from;
+
+	to = destination;
+	from = source;
+	if (from < to)
 	{
-		return (1);
+		while (len > 0)
+		{
+			to[len - 1] = from[len - 1];
+			len--;
+		}
 	}
-	return (0);
+	else if (from > to)
+		ft_memcpy(to, from, len);
+	return (to);
 }

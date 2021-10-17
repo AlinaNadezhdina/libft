@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 22:51:07 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/09 23:06:11 by wcollen          ###   ########.fr       */
+/*   Updated: 2021/10/10 16:26:58 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include<stddef.h>
 
-int	ft_isalpha(int symb)
+size_t	ft_strlen(const char *symb)
 {
-	if ((symb >= 'A' && symb <= 'Z') || (symb >= 'a' && symb <= 'z'))
+	unsigned long	length;
+
+	length = 0;
+	while (*symb)
 	{
-		return (1);
+		length++;
+		symb++;
 	}
-	return (0);
+	return (length);
 }

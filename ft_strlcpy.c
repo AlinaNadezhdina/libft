@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                        :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 22:51:07 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/09 23:06:11 by wcollen          ###   ########.fr       */
+/*   Created: 2021/10/09 23:10:13 by wcollen           #+#    #+#             */
+/*   Updated: 2021/10/17 13:01:47 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int symb)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *destination, const char *source, size_t size)
 {
-	if ((symb >= 'A' && symb <= 'Z') || (symb >= 'a' && symb <= 'z'))
+	unsigned int	i;
+
+	i = 0;
+	if (size > 0)
 	{
-		return (1);
+		while (source[i] && i < (size - 1))
+		{
+			destination[i] = source[i];
+			i++;
+		}
+		destination[i] = '\0';
 	}
-	return (0);
+	return (ft_strlen(source));
 }

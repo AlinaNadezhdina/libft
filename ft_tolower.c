@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 22:51:07 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/09 23:06:11 by wcollen          ###   ########.fr       */
+/*   Updated: 2021/10/17 16:33:41 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int symb)
+int	ft_tolower(int symb)
 {
-	if ((symb >= 'A' && symb <= 'Z') || (symb >= 'a' && symb <= 'z'))
-	{
-		return (1);
-	}
-	return (0);
+	if (symb >= 'A' && symb <= 'Z')
+		return (symb + 32);
+	else
+		return (symb);
 }

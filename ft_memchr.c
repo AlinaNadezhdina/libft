@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 22:51:07 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/09 23:06:11 by wcollen          ###   ########.fr       */
+/*   Created: 2021/10/09 23:10:13 by wcollen           #+#    #+#             */
+/*   Updated: 2021/10/17 15:11:13 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int symb)
+#include "libft.h"
+
+void	*ft_memchr(const void *str, int symb, size_t n)
 {
-	if ((symb >= 'A' && symb <= 'Z') || (symb >= 'a' && symb <= 'z'))
+	unsigned char	*s;
+
+	s = (unsigned char *)str;
+	while (n--)
 	{
-		return (1);
+		if (*s == (unsigned char)symb)
+			return (s);
+		s++;
 	}
 	return (0);
 }

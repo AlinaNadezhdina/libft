@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                        :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 23:10:13 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/17 12:18:31 by wcollen          ###   ########.fr       */
+/*   Updated: 2021/10/17 17:55:14 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *destination, const void *source, size_t n)
+size_t	ft_strlcat(char *destination, const char *source, size_t size)
 {
-	size_t				i;
-	unsigned char		*to;
-	const unsigned char	*from;
+	size_t	i;
+	size_t	length_dst;
+	size_t	length_src;
+	size_t	result;
+	size_t	j;
 
-	i = 0;
-	to = destination;
-	from = source;
-	if (from || to)
+	result = 0;
+	j = 0;
+	length_dst = ft_strlen(destination);
+	i = length_dst;
+	length_src = ft_strlen(source);
+	if (size >= length_dst)
+		result = length_src + length_dst;
+	else
+		return (length_src + size);
+	while (source[j] && i < (size - 1))
 	{
-		while (i < n)
-		{
-			to[i] = from[i];
-			i++;
-		}
+		destination[length_dst] = source[j];
+		i++;
+		j++;
+		length_dst++;
 	}
-	return (to);
+	destination[length_dst] = '\0';
+	return (result);
 }
