@@ -6,13 +6,13 @@
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 22:51:07 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/17 18:37:20 by wcollen          ###   ########.fr       */
+/*   Updated: 2021/10/20 18:27:48 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *str, int symb)
 {
-	while (*str != symb)
+	while (*str != (unsigned char)symb)
 	{
 		if (*str == '\0')
 			return ((void *)0);
