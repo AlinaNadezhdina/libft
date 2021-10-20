@@ -6,7 +6,7 @@
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 23:10:13 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/17 17:55:14 by wcollen          ###   ########.fr       */
+/*   Updated: 2021/10/20 18:56:51 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *destination, const char *source, size_t size)
 	length_dst = ft_strlen(destination);
 	i = length_dst;
 	length_src = ft_strlen(source);
-	if (size >= length_dst)
+	if (size > length_dst)
 		result = length_src + length_dst;
 	else
 		return (length_src + size);
