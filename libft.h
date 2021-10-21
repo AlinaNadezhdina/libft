@@ -6,7 +6,7 @@
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 17:13:27 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/21 15:03:05 by wcollen          ###   ########.fr       */
+/*   Updated: 2021/10/21 23:22:13 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -41,4 +41,5 @@ char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *s2);
+char	**ft_split(char const *s, char c);
 #endif

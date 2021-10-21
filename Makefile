@@ -6,7 +6,7 @@
 #    By: wcollen <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/16 18:32:08 by wcollen           #+#    #+#              #
-#    Updated: 2021/10/21 12:26:44 by wcollen          ###   ########.fr        #
+#    Updated: 2021/10/21 23:22:28 by wcollen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS	=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
 			ft_strncmp.c	ft_memchr.c		ft_memcmp.c\
 			ft_strnstr.c	ft_atoi.c		ft_calloc.c\
 			ft_strdup.c		ft_substr.c		ft_strjoin.c\
-			ft_strtrim.c
+			ft_strtrim.c	ft_split.c
 
 HEADER	=	libft.h
 
