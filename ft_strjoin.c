@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wcollen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 18:59:02 by wcollen           #+#    #+#             */
-/*   Updated: 2021/10/20 20:11:05 by wcollen          ###   ########.fr       */
+/*   Created: 2021/10/21 10:48:22 by wcollen           #+#    #+#             */
+/*   Updated: 2021/10/21 12:05:33 by wcollen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*dest;
-	size_t	s_len;
+	char	*result;
 	size_t	i;
+	size_t	j;
 
+	if (!s1 || !s2)
+		return ((void *)0);
 	i = 0;
-	if (!s)
+	result = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (result == (void *)0)
 		return ((void *)0);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (start + len > s_len)
-		len = s_len - start;
-	dest = malloc(sizeof(*s) * (len + 1));
-	if (dest == (void *)0)
-		return ((void *)0);
-	while (i < len)
+	while (s1[i] != '\0')
 	{
-		dest[i] = s[start + i];
+		result[i] = s1[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		result[i + j] = s2[j];
+		j++;
+	}
+	result[i + j] = '\0';
+	return (result);
 }
