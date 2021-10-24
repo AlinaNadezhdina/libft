@@ -6,7 +6,7 @@
 #    By: wcollen <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 16:07:46 by wcollen           #+#    #+#              #
-#    Updated: 2021/10/23 19:20:13 by wcollen          ###   ########.fr        #
+#    Updated: 2021/10/24 18:14:54 by wcollen          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRCS		=	ft_isalpha.c	ft_isdigit.c	ft_isalnum.c\
 OBJS		=	$(SRCS:.c=.o)
 
 BONUS		=	ft_lstnew.c		ft_lstadd_front.c	ft_lstsize.c\
-				ft_lstlast.c	ft_lstadd_back.c
+				ft_lstlast.c	ft_lstadd_back.c	ft_lstdelone.c\
+				ft_lstclear.c	ft_lstiter.c		ft_lstmap.c\
 
 BONUS_OBJS	=	$(BONUS:.c=.o)
 
